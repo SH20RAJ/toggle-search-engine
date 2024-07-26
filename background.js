@@ -1,3 +1,4 @@
+//outdated now
 const engines = {
     google: 'https://www.google.com/search?q=',
     bing: 'https://www.bing.com/search?q=',

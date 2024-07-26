@@ -17,5 +17,5 @@
     "icons": {
       "128": "icon.png"
     },
-    "permissions": ["tabs", "activeTab"]
-  }
+    "permissions": ["activeTab", "scripting"]
+}
