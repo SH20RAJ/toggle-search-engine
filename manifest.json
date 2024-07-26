@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Toggle Search Engine",
     "version": "1.0",
-    "description": "Toggle between multiple search engines",
+    "description": "Toggle between popular search engines",
     "background": {
       "service_worker": "background.js"
     },
@@ -14,11 +14,8 @@
         "128": "icon.png"
       }
     },
-    "options_page": "options.html",
-    "permissions": [
-      "activeTab",
-      "storage",
-      "tabs"
-    ]
+    "icons": {
+      "128": "icon.png"
+    },
+    "permissions": ["tabs", "activeTab"]
   }
-  

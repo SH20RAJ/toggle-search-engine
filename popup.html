@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search Engine Toggle</title>
+  <style>
+    body {
+      width: 200px;
+      font-family: Arial, sans-serif;
+    }
+    .engine {
+      cursor: pointer;
+      padding: 10px;
+      margin: 5px 0;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .engine img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
-  <h1>Search Engine Toggle</h1>
-  <button id="toggleButton">Toggle Search Engine</button>
-  <p>
-    <a href="options.html" target="_blank">Options</a>
-  </p>
+  <div class="engine" data-engine="google"><img src="google.png" alt="Google"> Google</div>
+  <div class="engine" data-engine="bing"><img src="bing.png" alt="Bing"> Bing</div>
+  <div class="engine" data-engine="duckduckgo"><img src="duckduckgo.png" alt="DuckDuckGo"> DuckDuckGo</div>
+  <div class="engine" data-engine="yahoo"><img src="yahoo.png" alt="Yahoo"> Yahoo</div>
+  <div class="engine" data-engine="baidu"><img src="baidu.png" alt="Baidu"> Baidu</div>
+  <div class="engine" data-engine="yandex"><img src="yandex.png" alt="Yandex"> Yandex</div>
   <script src="popup.js"></script>
 </body>
 </html>
