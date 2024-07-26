@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./icon.png" alt="Toggle Search Engine Logo">
+  <img src="./icon.png" width="250px" alt="Toggle Search Engine Logo">
 </p>
 
 <h1 align="center">Toggle Search Engine</h1>
@@ -10,6 +10,7 @@
   <img src="https://img.shields.io/github/issues/SH20RAJ/toggle-search-engine" alt="Issues">
   <img src="https://img.shields.io/github/forks/SH20RAJ/toggle-search-engine" alt="Forks">
   <img src="https://img.shields.io/github/stars/SH20RAJ/toggle-search-engine" alt="Stars">
+  <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2Ftoggle-search-engine"><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2Ftoggle-search-engine&labelColor=%23ba68c8&countColor=%232ccce4&style=flat" alt="Visitors"></a>
 </p>
 
 ## Introduction
