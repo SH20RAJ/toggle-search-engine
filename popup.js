@@ -2,9 +2,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.engine').forEach(engine => {
       engine.addEventListener('click', () => {
         chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-          let query = new URL(tabs[0].url).searchParams.get('q');
+          let currentUrl = new URL(tabs[0].url);
+          let query = null;
+  
+          // Extract the search query based on the search engine
+          if (currentUrl.hostname.includes('google')) {
+            query = currentUrl.searchParams.get('q');
+          } else if (currentUrl.hostname.includes('bing')) {
+            query = currentUrl.searchParams.get('q');
+          } else if (currentUrl.hostname.includes('duckduckgo')) {
+            query = currentUrl.searchParams.get('q');
+          } else if (currentUrl.hostname.includes('yahoo')) {
+            query = currentUrl.searchParams.get('p');
+          } else if (currentUrl.hostname.includes('baidu')) {
+            query = currentUrl.searchParams.get('wd');
+          } else if (currentUrl.hostname.includes('yandex')) {
+            query = currentUrl.searchParams.get('text');
+          }
+  
           if (!query) {
-            alert('Please search something on Google first.');
+            alert('Please search something on a supported search engine first.');
             return;
           }
   
