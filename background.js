@@ -1,10 +1,23 @@
+let currentEngine = 'google'; // Default search engine is Google
+
 chrome.action.onClicked.addListener((tab) => {
-    if (tab.url.includes('google.com/search')) {
-      const query = new URL(tab.url).searchParams.get('q');
-      chrome.tabs.update(tab.id, { url: `https://www.bing.com/search?q=${query}` });
-    } else if (tab.url.includes('bing.com/search')) {
-      const query = new URL(tab.url).searchParams.get('q');
-      chrome.tabs.update(tab.id, { url: `https://www.google.com/search?q=${query}` });
-    }
-  });
-  
+  const url = new URL(tab.url);
+  const query = url.searchParams.get('q');
+  let newUrl = '';
+
+  if (url.hostname.includes('google.com')) {
+    newUrl = `https://www.bing.com/search?q=${query}`;
+    currentEngine = 'bing';
+  } else if (url.hostname.includes('bing.com')) {
+    newUrl = `https://www.google.com/search?q=${query}`;
+    currentEngine = 'google';
+  } else if (currentEngine === 'google') {
+    newUrl = `https://www.bing.com/search?q=${query}`;
+    currentEngine = 'bing';
+  } else {
+    newUrl = `https://www.google.com/search?q=${query}`;
+    currentEngine = 'google';
+  }
+
+  chrome.tabs.update(tab.id, { url: newUrl });
+});
