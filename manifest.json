@@ -2,19 +2,22 @@
     "manifest_version": 3,
     "name": "Toggle Search Engine",
     "version": "1.0",
-    "description": "Toggle between Google and Bing search results",
+    "description": "Toggle between multiple search engines",
     "background": {
       "service_worker": "background.js"
     },
     "action": {
+      "default_popup": "popup.html",
       "default_icon": {
         "16": "icon.png",
         "48": "icon.png",
         "128": "icon.png"
       }
     },
+    "options_page": "options.html",
     "permissions": [
       "activeTab",
+      "storage",
       "tabs"
     ]
   }

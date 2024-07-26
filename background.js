@@ -1,23 +1,35 @@
-let currentEngine = 'google'; // Default search engine is Google
+let engines = ['google', 'bing']; // Default search engines
+let currentEngineIndex = 0;
+
+chrome.storage.sync.get(['engines'], (result) => {
+  if (result.engines) {
+    engines = result.engines;
+  }
+});
 
 chrome.action.onClicked.addListener((tab) => {
-  const url = new URL(tab.url);
-  const query = url.searchParams.get('q');
+  const currentUrl = new URL(tab.url);
+  const query = currentUrl.searchParams.get('q');
   let newUrl = '';
 
-  if (url.hostname.includes('google.com')) {
-    newUrl = `https://www.bing.com/search?q=${query}`;
-    currentEngine = 'bing';
-  } else if (url.hostname.includes('bing.com')) {
-    newUrl = `https://www.google.com/search?q=${query}`;
-    currentEngine = 'google';
-  } else if (currentEngine === 'google') {
-    newUrl = `https://www.bing.com/search?q=${query}`;
-    currentEngine = 'bing';
+  if (currentUrl.hostname.includes('google.com') || currentUrl.hostname.includes('bing.com')) {
+    currentEngineIndex = (currentEngineIndex + 1) % engines.length;
   } else {
-    newUrl = `https://www.google.com/search?q=${query}`;
-    currentEngine = 'google';
+    currentEngineIndex = 0;
   }
 
-  chrome.tabs.update(tab.id, { url: newUrl });
+  const engine = engines[currentEngineIndex];
+  switch (engine) {
+    case 'google':
+      newUrl = `https://www.google.com/search?q=${query}`;
+      break;
+    case 'bing':
+      newUrl = `https://www.bing.com/search?q=${query}`;
+      break;
+    // Add more cases here for other search engines
+  }
+
+  if (newUrl) {
+    chrome.tabs.update(tab.id, { url: newUrl });
+  }
 });
