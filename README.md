@@ -13,9 +13,18 @@
   <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2Ftoggle-search-engine"><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2Ftoggle-search-engine&labelColor=%23ba68c8&countColor=%232ccce4&style=flat" alt="Visitors"></a>
 </p>
 
+
+
+
 ## Introduction
 
 **Toggle Search Engine** is a powerful Chrome extension that allows you to seamlessly toggle between popular search engines such as Google, Bing, DuckDuckGo, Yahoo, Baidu, and Yandex. This extension enhances your browsing experience by providing quick access to multiple search engines without leaving the current tab.
+
+
+## Demo
+
+https://github.com/user-attachments/assets/3f61a6af-17dc-426d-9c31-8e04d3362f8f
+
 
 ## Features
 
